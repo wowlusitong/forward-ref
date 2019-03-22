@@ -1,0 +1,36 @@
+{
+  "private": true,
+  "name": "forward-ref-packages",
+  "workspaces": [
+    "packages/*"
+  ],
+  "version": "1.0.0",
+  "description": "A Higher Order Component for React.forwardRef",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lerna run start --parallel",
+    "build": "lerna run build",
+    "release": "lerna publish --exact --force-publish --no-push -m \"chore(release): publish %s\" --conventional-commits"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wowlusitong/forward-ref.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wowlusitong/forward-ref/issues"
+  },
+  "homepage": "https://github.com/wowlusitong/forward-ref#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/plugin-proposal-decorators": "^7.4.0",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "lerna": "^3.13.1"
+  }
+}
