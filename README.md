@@ -18,7 +18,7 @@ $ npm install forward-ref
 $ yarn add forward-ref
 ```
 ## 在Decorator中使用
-
+[查看代码示例](https://github.com/wowlusitong/forward-ref/blob/master/packages/examples/src/scripts/components/DecoratorDemo.js)
 ```js
 import { forwardRef, setRef } from 'forward-ref';
 
@@ -50,7 +50,7 @@ export default class DecoratorDemo extends React.Component {
 
 
 ## 在组合HOC中使用
-
+[查看代码示例](https://github.com/wowlusitong/forward-ref/blob/master/packages/examples/src/scripts/components/HOCDemo.js)
 ```js
 import { forwardRef, setRef } from 'forward-ref';
 
