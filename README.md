@@ -33,11 +33,10 @@ export default class DecoratorDemo extends React.Component {
 
 ## 设置DOM Ref
 ```js
-import { forwardRef, setRef } from 'forward-ref';
+import { forwardRef } from 'forward-ref';
 
 @forwardRef
 @XXX // 组件使用的decorator，比如react-redux的connect等
-@setRef
 export default class DecoratorDemo extends React.Component {
   return (
     <div ref={this.props.forwardRef}>
