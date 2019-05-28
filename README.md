@@ -1,6 +1,8 @@
 # forward-ref &middot; [![npm](https://img.shields.io/npm/v/forward-ref.svg?style=popout)](https://www.npmjs.com/package/forward-ref) [![min](https://badgen.net/bundlephobia/min/forward-ref)](https://bundlephobia.com/result?p=forward-ref)
 Easy to use forwardRef in Class Component
 
+[中文](https://github.com/wowlusitong/forward-ref/blob/master/README_CN.md)
+
 # Installation
 ```sh
 $ npm install forward-ref --save
