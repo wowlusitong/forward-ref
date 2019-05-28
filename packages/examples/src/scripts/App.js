@@ -15,6 +15,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
+        <h3>Open the console for debug</h3>
         <DecoratorDemo type="decorator" ref={this.decoratorDemoRef} />
         <HOCDemo type="hoc" ref={this.HOCDemoRef} />
       </div>

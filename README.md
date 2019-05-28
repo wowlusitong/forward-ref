@@ -4,39 +4,25 @@
 # 介绍
 
 ## forwardRef
-将ref以props的形式传递到组件内，也就是说组件可以接收到一个叫做`forwardRef`的props
+将ref以props的形式传递到组件内，组件可以接收到一个叫做`forwardRef`的props
 
-## setRef
-如果要把ref给当前组件，那么则需要setRef函数，它会直接设置组件的ref为forwardRef
 
 # 使用方法
 
 ## 安装依赖
 ```sh
-$ npm install forward-ref
+$ npm install forward-ref --save
 # or
 $ yarn add forward-ref
 ```
 ## 在Decorator中使用
 [查看代码示例](https://github.com/wowlusitong/forward-ref/blob/master/packages/examples/src/scripts/components/DecoratorDemo.js)
+
 ```js
-import { forwardRef, setRef } from 'forward-ref';
-
-@forwardRef
-@XXX // 组件使用的decorator，比如react-redux的connect等
-@setRef
-export default class DecoratorDemo extends React.Component {
-  // ...
-}
-
-```
-
-## 设置DOM Ref
-```js
+import React from 'react';
 import { forwardRef } from 'forward-ref';
 
 @forwardRef
-@XXX // 组件使用的decorator，比如react-redux的connect等
 export default class DecoratorDemo extends React.Component {
   return (
     <div ref={this.props.forwardRef}>
@@ -51,22 +37,17 @@ export default class DecoratorDemo extends React.Component {
 ## 在组合HOC中使用
 [查看代码示例](https://github.com/wowlusitong/forward-ref/blob/master/packages/examples/src/scripts/components/HOCDemo.js)
 ```js
+import React from 'react';
 import { forwardRef, setRef } from 'forward-ref';
 
 class HOCDemo extends React.Component {
-  // ...
+  render() {
+    return (
+      <div ref={this.props.forwardRef}>HOCDemo</div>
+    )
+  }
 }
 
-export default _.compose(
-  forwardRef,
-  XXX, // 组件使用的HOC，比如react-redux的connect等
-  setRef
-)(HOCDemo)
-// 或者
-export default forwardRef(
-  XXX( // 组件使用的HOC，比如react-redux的connect等
-    setRef(HOCDemo)
-  )
-);
+export default forwardRef(HOCDemo);
 
 ```

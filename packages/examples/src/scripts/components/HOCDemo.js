@@ -1,17 +1,12 @@
 import React from 'react';
-import { withProps, compose } from 'recompose';
 import { forwardRef, setRef } from 'forward-ref';
 
 class HOCDemo extends React.Component {
   render() {
     return (
-      <div>HOCDemo</div>
+      <div ref={this.props.forwardRef}>HOCDemo</div>
     )
   }
 }
 
-export default forwardRef(
-  withProps({name: 'Sitong Lu'})(
-    setRef(HOCDemo)
-  )
-);
+export default forwardRef(HOCDemo);
