@@ -18,7 +18,7 @@ $ npm install forward-ref
 $ yarn add forward-ref
 ```
 ## 在Decorator中使用
-[查看代码示例](https://github.com/wowlusitong/forward-ref/blob/master/packages/examples/src/scripts/components/DecoratorDemo.js)
+获取DecoratorDemo组件本身 [查看代码示例](https://github.com/wowlusitong/forward-ref/blob/master/packages/examples/src/scripts/components/DecoratorDemo.js)
 ```js
 import { forwardRef, setRef } from 'forward-ref';
 
@@ -32,18 +32,19 @@ export default class DecoratorDemo extends React.Component {
 ```
 
 ## 设置DOM Ref
+获取div DOM [查看代码示例](https://github.com/wowlusitong/forward-ref/blob/master/packages/examples/src/scripts/components/ForwardDemo.js)
 ```js
 import { forwardRef, setRef } from 'forward-ref';
 
 @forwardRef
-@XXX // 组件使用的decorator，比如react-redux的connect等
-@setRef
-export default class DecoratorDemo extends React.Component {
-  return (
-    <div ref={this.props.forwardRef}>
-      XXXX
-    </div>
-  )
+export default class ForwardDemo extends React.Component {
+  render() {
+    return (
+      <div ref={this.props.forwardRef}>
+        XXX
+      </div>
+    )
+  }
 }
 
 ```
@@ -58,16 +59,17 @@ class HOCDemo extends React.Component {
   // ...
 }
 
-export default _.compose(
-  forwardRef,
-  XXX, // 组件使用的HOC，比如react-redux的connect等
-  setRef
-)(HOCDemo)
-// 或者
 export default forwardRef(
   XXX( // 组件使用的HOC，比如react-redux的connect等
     setRef(HOCDemo)
   )
 );
+
+// 或者使用loadsh的compose，这样会更方便
+export default _.compose(
+  forwardRef,
+  XXX, // 组件使用的HOC，比如react-redux的connect等
+  setRef
+)(HOCDemo)
 
 ```
